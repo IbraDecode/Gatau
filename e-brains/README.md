@@ -1,19 +1,19 @@
-# E-Brains Bot Fix
+# e-brains bot fix
 
-Bot nggak respon karena:
-- File .env hilang, token kosong.
-- Versi Telegraf salah (^5.8.0 -> ^4.16.3).
-- Error syntax di artisan.
-- Import ProcessorProvider salah.
-- Bot nggak launch.
+bot nggak respon karena:
+- file .env hilang, token kosong.
+- versi telegraf salah (^5.8.0 -> ^4.16.3).
+- error syntax di artisan.
+- import processorprovider salah.
+- bot nggak launch.
 
-Udah di-fix semua. Bot sekarang bisa jalan.
+udah di-fix semua. bot sekarang bisa jalan.
 
-Cara jalanin:
-1. Copy .env.example ke .env, isi token.
+cara jalanin:
+1. copy .env.example ke .env, isi token.
 2. npm install
 3. node artisan migrate
 4. node artisan seed
 5. node artisan serve
 
-Kalau masalah lagi, bilang.
+kalau masalah lagi, bilang.
