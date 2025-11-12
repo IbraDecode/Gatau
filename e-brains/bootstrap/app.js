@@ -1,0 +1,18 @@
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import helmet from 'helmet';
+import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { AppServiceProvider } from '../app/Providers/AppServiceProvider.js';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const app = express();
+app.use(helmet());
+app.use(cors());
+app.set('views', path.join(__dirname, '..', 'resources', 'views'));
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, '..', 'public')));
+await AppServiceProvider.register(app);
+const port = process.env.SERVE_PORT || process.env.PORT || 3000;
+app.listen(port, process.env.SERVE_HOST || '0.0.0.0', () => console.log(`E-Brains listening on ${port}`));
