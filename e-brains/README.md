@@ -1,5 +1,6 @@
-# e-brains bot fix
+# e-brains bot
 
+dokumetasi singkat dri gw:v
 bot nggak respon karena:
 - file .env hilang, token kosong.
 - versi telegraf salah (^5.8.0 -> ^4.16.3).
