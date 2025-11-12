@@ -22,7 +22,3 @@ Ini beberapa penyebab kenapa bot nggak bales pesan, sama cara fix-nya:
 - **Import ProcessorProvider salah:** Dulunya import default, tapi sebenarnya named export. Udah diganti jadi import { ProcessorProvider }.
 - **Bot nggak diluncurin:** Di AppServiceProvider dulunya cuma mount webhook, nggak ada launch(). Udah ditambah bot.launch() biar bot polling.
 - **Masalah polling:** Kalau di server tanpa internet langsung, mending pake webhook. Set webhook URL lewat API Telegram: https://api.telegram.org/bot<TOKEN>/setWebhook?url=<URL_WEBHOOK_KAMU>
-
-### Launch bot hang
-
-Kalau pas `node artisan serve` hang di "Bot launching...", mungkin gara-gara batasan jaringan di environment ini. Buat development lokal, pastiin koneksi internet stabil. Buat production, pake webhook aja.
